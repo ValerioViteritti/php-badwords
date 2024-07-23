@@ -7,7 +7,9 @@ $lunghezza_text = strlen($text_senza_spazi);
 $parola_da_censurare = $_POST['blind'];
 
 $text_diverso = str_replace($parola_da_censurare, '***', $text);
-$text_diverso_senza_spazi = str_replace(' ', '', $text_diverso);
+$text_non_contare_asterischi = str_replace ('***', '', $text_diverso);
+$text_diverso_senza_spazi = str_replace(' ', '', $text_non_contare_asterischi);
+
 $lunghezza_text_diverso = strlen($text_diverso_senza_spazi);
 
 ?>
@@ -22,10 +24,10 @@ $lunghezza_text_diverso = strlen($text_diverso_senza_spazi);
 </head>
 <body>
     
-    <h2><mark>Testo 1: </mark><?php echo $text?></h2>
+    <h2><mark>Testo 1:</mark> <?php echo $text?></h2>
     <strong>Questo testo ha <?php echo $lunghezza_text ?> caratteri</strong>
 
-    <h2><mark>Testo diverso: </mark><?php echo $text_diverso?></h2>
+    <h2><mark>Testo diverso:</mark> <?php echo $text_diverso?></h2>
     <strong>Questo testo ha <?php echo $lunghezza_text_diverso ?> caratteri</strong>
 
     
