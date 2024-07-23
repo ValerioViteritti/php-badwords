@@ -2,11 +2,13 @@
 <?php
 
 $text = $_POST['text'];
+$text_senza_spazi = str_replace(' ', '', $text);
+$lunghezza_text = strlen($text_senza_spazi);
 $parola_da_censurare = $_POST['blind'];
-$lunghezza_text = strlen($text);
 
 $text_diverso = str_replace($parola_da_censurare, '***', $text);
-$lunghezza_text_diverso = strlen($text_diverso)
+$text_diverso_senza_spazi = str_replace(' ', '', $text_diverso);
+$lunghezza_text_diverso = strlen($text_diverso_senza_spazi);
 
 ?>
 <!-- Fine Codice PHP -->
