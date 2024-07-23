@@ -2,9 +2,10 @@
 <?php
 
 $text = $_POST['text'];
+$parola_da_censurare = $_POST['blind'];
 $lunghezza_text = strlen($text);
 
-$text_diverso = str_replace('Pinocchio', '***', $text);
+$text_diverso = str_replace($parola_da_censurare, '***', $text);
 $lunghezza_text_diverso = strlen($text_diverso)
 
 ?>
